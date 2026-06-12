@@ -51,6 +51,6 @@ Chrome Web Store release drafts are in `docs/STORE_LISTING.md`, `docs/CHROME_WEB
 
 Published pages:
 
-- Homepage: https://tokenyet.github.io/video_theater/
-- Support: https://tokenyet.github.io/video_theater/support.html
-- Privacy policy: https://tokenyet.github.io/video_theater/privacy.html
+- Homepage: https://www.dowen.idv.tw/video_theater/
+- Support: https://www.dowen.idv.tw/video_theater/support.html
+- Privacy policy: https://www.dowen.idv.tw/video_theater/privacy.html

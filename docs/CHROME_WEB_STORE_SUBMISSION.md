@@ -45,6 +45,6 @@ Included locales:
 - Package with `scripts/package.ps1`.
 - Upload the generated ZIP from `dist/`.
 - Use the copy in `docs/STORE_LISTING.md`.
-- Use `https://tokenyet.github.io/video_theater/` as the homepage URL.
-- Use `https://tokenyet.github.io/video_theater/support.html` as the support URL.
-- Use `https://tokenyet.github.io/video_theater/privacy.html` as the privacy policy URL.
+- Use `https://www.dowen.idv.tw/video_theater/` as the homepage URL.
+- Use `https://www.dowen.idv.tw/video_theater/support.html` as the support URL.
+- Use `https://www.dowen.idv.tw/video_theater/privacy.html` as the privacy policy URL.

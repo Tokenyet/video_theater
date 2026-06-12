@@ -20,9 +20,9 @@ Stored data stays in `chrome.storage.sync` and includes saved page URLs, hostnam
 - Primary category suggestion: Accessibility
 - Default language: English
 - Package locales: `en`, `zh_TW`, `zh_CN`, `ja`, `ko`
-- Homepage URL: https://tokenyet.github.io/video_theater/
-- Privacy policy URL: https://tokenyet.github.io/video_theater/privacy.html
-- Support URL: https://tokenyet.github.io/video_theater/support.html
+- Homepage URL: https://www.dowen.idv.tw/video_theater/
+- Privacy policy URL: https://www.dowen.idv.tw/video_theater/privacy.html
+- Support URL: https://www.dowen.idv.tw/video_theater/support.html
 
 ## Graphic Assets
 
