@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title data-i18n="extensionName">Video Theater</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <h1 data-i18n="extensionName">Video Theater</h1>
+          <p id="page-scope" data-i18n="loadingPage">Loading page...</p>
+        </div>
+        <span id="active-preset" class="badge" data-i18n="presetDefault">Default</span>
+      </header>
+
+      <section class="meters" aria-label="Video filters">
+        <label>
+          <span data-i18n="brightnessLabel">Brightness</span>
+          <output id="brightnessValue">100%</output>
+          <input id="brightness" type="range" min="0" max="250" step="1" value="100">
+        </label>
+        <label>
+          <span data-i18n="contrastLabel">Contrast</span>
+          <output id="contrastValue">100%</output>
+          <input id="contrast" type="range" min="25" max="250" step="1" value="100">
+        </label>
+        <label>
+          <span data-i18n="saturationLabel">Saturation</span>
+          <output id="saturationValue">100%</output>
+          <input id="saturation" type="range" min="0" max="250" step="1" value="100">
+        </label>
+        <label>
+          <span data-i18n="warmthLabel">Warmth</span>
+          <output id="warmthValue">0%</output>
+          <input id="warmth" type="range" min="0" max="40" step="1" value="0">
+        </label>
+      </section>
+
+      <section class="quick-presets" aria-label="Quick presets">
+        <div class="section-label" data-i18n="quickPresetsSection">Quick settings</div>
+        <div id="preset-slots" class="preset-slots"></div>
+      </section>
+
+      <section class="quick-resets" aria-label="Reset actions">
+        <div class="action-row">
+          <button id="reset-filters" type="button" class="secondary" data-i18n="resetFiltersButton">Preview default</button>
+          <p data-i18n="resetFiltersHint">Sets the sliders to neutral for this tab only. Saved presets are unchanged until you save.</p>
+        </div>
+        <button id="open-options" type="button" class="secondary wide" data-i18n="manageButton">Manage presets</button>
+      </section>
+
+      <p id="video-count" class="hint"></p>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

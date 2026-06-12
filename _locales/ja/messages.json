@@ -1,0 +1,146 @@
+{
+  "extensionName": {
+    "message": "Video Theater"
+  },
+  "extensionDescription": {
+    "message": "動画の明るさ、コントラスト、彩度、暖かさを調整し、ドメインごとに最大 3 つのクイック設定を保存します。"
+  },
+  "optionsTitle": {
+    "message": "Video Theater オプション"
+  },
+  "optionsDescription": {
+    "message": "動画の画質フィルターを調整し、ドメインごとに最大 3 つのクイック設定を保存します。"
+  },
+  "loadingPage": {
+    "message": "ページを読み込み中..."
+  },
+  "presetDefault": {
+    "message": "既定"
+  },
+  "presetDomain": {
+    "message": "ドメイン"
+  },
+  "quickPresetsSection": {
+    "message": "クイック設定"
+  },
+  "quickPresetLabel": {
+    "message": "クイック {slot}"
+  },
+  "emptyPresetSlot": {
+    "message": "空"
+  },
+  "brightnessLabel": {
+    "message": "明るさ"
+  },
+  "contrastLabel": {
+    "message": "コントラスト"
+  },
+  "saturationLabel": {
+    "message": "彩度"
+  },
+  "warmthLabel": {
+    "message": "暖かさ"
+  },
+  "savePresetButton": {
+    "message": "保存"
+  },
+  "clearPresetButton": {
+    "message": "消去"
+  },
+  "resetFiltersButton": {
+    "message": "一時的に既定値"
+  },
+  "resetFiltersHint": {
+    "message": "このタブだけスライダーを標準値に戻します。保存するまで保存済みプリセットは変更されません。"
+  },
+  "manageButton": {
+    "message": "プリセット管理"
+  },
+  "resetAllButton": {
+    "message": "全プリセット削除"
+  },
+  "videoCount": {
+    "message": "{count} 個の動画要素が見つかりました。"
+  },
+  "unsupportedPage": {
+    "message": "このページは調整できません。"
+  },
+  "unknownError": {
+    "message": "不明なエラー"
+  },
+  "savingPreset": {
+    "message": "クイック設定を保存中..."
+  },
+  "saveError": {
+    "message": "プリセットを保存できません。"
+  },
+  "savedPreset": {
+    "message": "クイック設定 {slot} を保存しました。"
+  },
+  "appliedPreset": {
+    "message": "クイック設定 {slot} を適用しました。"
+  },
+  "resetError": {
+    "message": "リセットできません。"
+  },
+  "clearPresetDone": {
+    "message": "クイック設定 {slot} を削除しました。"
+  },
+  "resetFiltersDone": {
+    "message": "このタブは一時的に既定値を表示しています。"
+  },
+  "resetAllConfirm": {
+    "message": "保存済みの Video Theater クイック設定をすべて削除しますか？この操作は元に戻せません。"
+  },
+  "resetAllDone": {
+    "message": "保存済みプリセットをすべて削除しました。"
+  },
+  "behaviorSection": {
+    "message": "動作"
+  },
+  "autoApplyLabel": {
+    "message": "ページを開いたときに保存済みプリセットを自動適用する"
+  },
+  "scopeHint": {
+    "message": "各ドメインには最大 3 つのクイック設定を保存できます。最後に保存または選択した設定が自動適用されます。"
+  },
+  "presetsSection": {
+    "message": "保存済みプリセット"
+  },
+  "dangerZoneSection": {
+    "message": "危険な操作"
+  },
+  "resetAllDescription": {
+    "message": "保存済みのクイック設定をすべて削除します。すべてのドメインに影響し、元に戻せません。"
+  },
+  "presetTargetHeader": {
+    "message": "対象"
+  },
+  "presetFiltersHeader": {
+    "message": "フィルター"
+  },
+  "presetUpdatedHeader": {
+    "message": "更新日時"
+  },
+  "presetActionsHeader": {
+    "message": "操作"
+  },
+  "optionsSaved": {
+    "message": "保存しました。"
+  },
+  "noPresets": {
+    "message": "保存済みプリセットはまだありません。"
+  },
+  "deletePresetButton": {
+    "message": "削除"
+  },
+  "presetDeleted": {
+    "message": "プリセットを削除しました。"
+  },
+  "filtersSummary": {
+    "message": "明るさ {brightness}%、コントラスト {contrast}%、彩度 {saturation}%、暖かさ {warmth}%"
+  },
+  "compactFiltersSummary": {
+    "message": "明 {brightness} / コ {contrast} / 彩 {saturation} / 暖 {warmth}"
+  }
+}

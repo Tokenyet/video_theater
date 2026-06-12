@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title data-i18n="optionsTitle">Video Theater Options</title>
+    <link rel="stylesheet" href="options.css">
+  </head>
+  <body>
+    <main>
+      <header class="page-header">
+        <div>
+          <h1 data-i18n="optionsTitle">Video Theater Options</h1>
+          <p data-i18n="optionsDescription">Tune video picture filters and save up to three quick settings per domain.</p>
+        </div>
+      </header>
+
+      <section>
+        <h2 data-i18n="behaviorSection">Behavior</h2>
+        <label class="check">
+          <input id="autoApply" type="checkbox">
+          <span data-i18n="autoApplyLabel">Automatically apply saved presets when a page opens</span>
+        </label>
+        <p class="hint" data-i18n="scopeHint">Each domain can keep up to three quick settings. The last saved or selected setting is applied automatically.</p>
+      </section>
+
+      <section>
+        <div class="section-title">
+          <h2 data-i18n="presetsSection">Saved presets</h2>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th data-i18n="presetTargetHeader">Target</th>
+                <th data-i18n="presetFiltersHeader">Filters</th>
+                <th data-i18n="presetUpdatedHeader">Updated</th>
+                <th data-i18n="presetActionsHeader">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="presets"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="danger-zone">
+        <div>
+          <h2 data-i18n="dangerZoneSection">Danger zone</h2>
+          <p data-i18n="resetAllDescription">Delete every saved quick setting. This affects all domains and cannot be undone.</p>
+        </div>
+        <button id="resetAll" type="button" class="danger" data-i18n="resetAllButton">Delete all presets</button>
+      </section>
+
+      <footer>
+        <span id="status" role="status" aria-live="polite"></span>
+      </footer>
+    </main>
+    <script src="options.js"></script>
+  </body>
+</html>

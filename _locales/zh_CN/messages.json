@@ -1,0 +1,146 @@
+{
+  "extensionName": {
+    "message": "Video Theater"
+  },
+  "extensionDescription": {
+    "message": "调整视频亮度、对比度、饱和度和暖色，并为每个域名保存最多三组快速设置。"
+  },
+  "optionsTitle": {
+    "message": "Video Theater 选项"
+  },
+  "optionsDescription": {
+    "message": "调整视频画面滤镜，并为每个域名保存最多三组快速设置。"
+  },
+  "loadingPage": {
+    "message": "正在加载页面..."
+  },
+  "presetDefault": {
+    "message": "默认"
+  },
+  "presetDomain": {
+    "message": "域名"
+  },
+  "quickPresetsSection": {
+    "message": "快速设置"
+  },
+  "quickPresetLabel": {
+    "message": "快速 {slot}"
+  },
+  "emptyPresetSlot": {
+    "message": "空白"
+  },
+  "brightnessLabel": {
+    "message": "亮度"
+  },
+  "contrastLabel": {
+    "message": "对比度"
+  },
+  "saturationLabel": {
+    "message": "饱和度"
+  },
+  "warmthLabel": {
+    "message": "暖色"
+  },
+  "savePresetButton": {
+    "message": "保存"
+  },
+  "clearPresetButton": {
+    "message": "清除"
+  },
+  "resetFiltersButton": {
+    "message": "临时回默认"
+  },
+  "resetFiltersHint": {
+    "message": "只把当前标签页的滑块调回中性值；已保存设置不会改变，除非你再次保存。"
+  },
+  "manageButton": {
+    "message": "管理设置"
+  },
+  "resetAllButton": {
+    "message": "删除所有设置"
+  },
+  "videoCount": {
+    "message": "找到 {count} 个视频元素。"
+  },
+  "unsupportedPage": {
+    "message": "此页面无法调整。"
+  },
+  "unknownError": {
+    "message": "未知错误"
+  },
+  "savingPreset": {
+    "message": "正在保存快速设置..."
+  },
+  "saveError": {
+    "message": "无法保存设置。"
+  },
+  "savedPreset": {
+    "message": "已保存快速设置 {slot}。"
+  },
+  "appliedPreset": {
+    "message": "已应用快速设置 {slot}。"
+  },
+  "resetError": {
+    "message": "无法重置。"
+  },
+  "clearPresetDone": {
+    "message": "已清除快速设置 {slot}。"
+  },
+  "resetFiltersDone": {
+    "message": "当前标签页已临时恢复默认值。"
+  },
+  "resetAllConfirm": {
+    "message": "要删除所有 Video Theater 快速设置吗？此操作无法撤销。"
+  },
+  "resetAllDone": {
+    "message": "所有保存设置已删除。"
+  },
+  "behaviorSection": {
+    "message": "行为"
+  },
+  "autoApplyLabel": {
+    "message": "页面打开时自动应用已保存设置"
+  },
+  "scopeHint": {
+    "message": "每个域名最多保留三组快速设置；最后保存或选择的设置会自动应用。"
+  },
+  "presetsSection": {
+    "message": "已保存设置"
+  },
+  "dangerZoneSection": {
+    "message": "危险区"
+  },
+  "resetAllDescription": {
+    "message": "删除所有已保存的快速设置。此操作会影响所有域名，且无法撤销。"
+  },
+  "presetTargetHeader": {
+    "message": "目标"
+  },
+  "presetFiltersHeader": {
+    "message": "滤镜"
+  },
+  "presetUpdatedHeader": {
+    "message": "更新时间"
+  },
+  "presetActionsHeader": {
+    "message": "操作"
+  },
+  "optionsSaved": {
+    "message": "已保存。"
+  },
+  "noPresets": {
+    "message": "尚未保存任何设置。"
+  },
+  "deletePresetButton": {
+    "message": "删除"
+  },
+  "presetDeleted": {
+    "message": "设置已删除。"
+  },
+  "filtersSummary": {
+    "message": "亮度 {brightness}%、对比度 {contrast}%、饱和度 {saturation}%、暖色 {warmth}%"
+  },
+  "compactFiltersSummary": {
+    "message": "亮 {brightness} / 对 {contrast} / 饱 {saturation} / 暖 {warmth}"
+  }
+}

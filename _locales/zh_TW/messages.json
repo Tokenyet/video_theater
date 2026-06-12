@@ -1,0 +1,146 @@
+{
+  "extensionName": {
+    "message": "Video Theater"
+  },
+  "extensionDescription": {
+    "message": "調整影片亮度、對比、飽和度與暖色，並為每個網域儲存最多三組快速設定。"
+  },
+  "optionsTitle": {
+    "message": "Video Theater 選項"
+  },
+  "optionsDescription": {
+    "message": "調整影片畫面濾鏡，並為每個網域儲存最多三組快速設定。"
+  },
+  "loadingPage": {
+    "message": "正在讀取頁面..."
+  },
+  "presetDefault": {
+    "message": "預設"
+  },
+  "presetDomain": {
+    "message": "網域"
+  },
+  "quickPresetsSection": {
+    "message": "快速設定"
+  },
+  "quickPresetLabel": {
+    "message": "快速 {slot}"
+  },
+  "emptyPresetSlot": {
+    "message": "空白"
+  },
+  "brightnessLabel": {
+    "message": "亮度"
+  },
+  "contrastLabel": {
+    "message": "對比"
+  },
+  "saturationLabel": {
+    "message": "飽和度"
+  },
+  "warmthLabel": {
+    "message": "暖色"
+  },
+  "savePresetButton": {
+    "message": "儲存"
+  },
+  "clearPresetButton": {
+    "message": "清除"
+  },
+  "resetFiltersButton": {
+    "message": "暫時回預設"
+  },
+  "resetFiltersHint": {
+    "message": "只把目前分頁的滑桿調回原點；已儲存設定不會改變，除非你再按儲存。"
+  },
+  "manageButton": {
+    "message": "管理設定"
+  },
+  "resetAllButton": {
+    "message": "刪除所有設定"
+  },
+  "videoCount": {
+    "message": "找到 {count} 個影片元素。"
+  },
+  "unsupportedPage": {
+    "message": "此頁面無法調整。"
+  },
+  "unknownError": {
+    "message": "未知錯誤"
+  },
+  "savingPreset": {
+    "message": "正在儲存快速設定..."
+  },
+  "saveError": {
+    "message": "無法儲存設定。"
+  },
+  "savedPreset": {
+    "message": "已儲存快速設定 {slot}。"
+  },
+  "appliedPreset": {
+    "message": "已套用快速設定 {slot}。"
+  },
+  "resetError": {
+    "message": "無法重設。"
+  },
+  "clearPresetDone": {
+    "message": "已清除快速設定 {slot}。"
+  },
+  "resetFiltersDone": {
+    "message": "目前分頁已暫時回到預設值。"
+  },
+  "resetAllConfirm": {
+    "message": "要刪除所有 Video Theater 快速設定嗎？這個動作無法復原。"
+  },
+  "resetAllDone": {
+    "message": "所有儲存設定已刪除。"
+  },
+  "behaviorSection": {
+    "message": "行為"
+  },
+  "autoApplyLabel": {
+    "message": "頁面開啟時自動套用已儲存設定"
+  },
+  "scopeHint": {
+    "message": "每個網域最多保留三組快速設定；最後儲存或選擇的設定會自動套用。"
+  },
+  "presetsSection": {
+    "message": "已儲存設定"
+  },
+  "dangerZoneSection": {
+    "message": "危險區"
+  },
+  "resetAllDescription": {
+    "message": "刪除所有已儲存的快速設定。這會影響所有網域，而且無法復原。"
+  },
+  "presetTargetHeader": {
+    "message": "目標"
+  },
+  "presetFiltersHeader": {
+    "message": "濾鏡"
+  },
+  "presetUpdatedHeader": {
+    "message": "更新時間"
+  },
+  "presetActionsHeader": {
+    "message": "操作"
+  },
+  "optionsSaved": {
+    "message": "已儲存。"
+  },
+  "noPresets": {
+    "message": "尚未儲存任何設定。"
+  },
+  "deletePresetButton": {
+    "message": "刪除"
+  },
+  "presetDeleted": {
+    "message": "設定已刪除。"
+  },
+  "filtersSummary": {
+    "message": "亮度 {brightness}%、對比 {contrast}%、飽和度 {saturation}%、暖色 {warmth}%"
+  },
+  "compactFiltersSummary": {
+    "message": "亮 {brightness} / 對 {contrast} / 飽 {saturation} / 暖 {warmth}"
+  }
+}

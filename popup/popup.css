@@ -1,0 +1,226 @@
+:root {
+  color-scheme: light dark;
+  --accent: #177e89;
+  --accent-strong: #0f5f68;
+  --danger: #b3261e;
+  --line: color-mix(in srgb, CanvasText 16%, transparent);
+  --muted: color-mix(in srgb, CanvasText 68%, transparent);
+  --surface: color-mix(in srgb, Canvas 92%, #177e89 8%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: Canvas;
+  color: CanvasText;
+  font: 14px/1.45 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  margin: 0;
+  min-width: 330px;
+}
+
+main {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+}
+
+header {
+  align-items: start;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+h1 {
+  font-size: 18px;
+  line-height: 1.2;
+  margin: 0 0 3px;
+}
+
+p {
+  margin: 0;
+}
+
+#page-scope,
+.hint {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.badge {
+  background: color-mix(in srgb, var(--accent) 14%, Canvas);
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  border-radius: 999px;
+  color: CanvasText;
+  font-size: 12px;
+  max-width: 120px;
+  overflow: hidden;
+  padding: 4px 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.meters {
+  border-block: 1px solid var(--line);
+  display: grid;
+  gap: 12px;
+  padding-block: 14px;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+label span {
+  font-weight: 650;
+}
+
+output {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+input[type="range"] {
+  accent-color: var(--accent);
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+.quick-presets,
+.quick-resets {
+  display: grid;
+  gap: 8px;
+}
+
+.quick-presets {
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+.section-label {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.preset-slots {
+  display: grid;
+  gap: 8px;
+}
+
+.slot-row {
+  display: grid;
+  gap: 6px;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+}
+
+.slot-apply {
+  align-items: center;
+  background: var(--surface);
+  border-color: var(--line);
+  color: CanvasText;
+  display: grid;
+  gap: 1px;
+  justify-items: start;
+  min-height: 46px;
+  min-width: 0;
+  overflow: hidden;
+  padding-block: 6px;
+  text-align: left;
+}
+
+.slot-apply:hover {
+  background: color-mix(in srgb, Canvas 82%, var(--accent) 18%);
+}
+
+.slot-apply.is-active {
+  background: color-mix(in srgb, var(--accent) 18%, Canvas);
+  border-color: color-mix(in srgb, var(--accent) 70%, CanvasText);
+}
+
+.slot-title,
+.slot-summary {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.slot-summary {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.quick-resets {
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+.action-row {
+  align-items: start;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: minmax(116px, auto) minmax(0, 1fr);
+}
+
+.action-row p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.wide {
+  width: 100%;
+}
+
+button {
+  background: var(--accent);
+  border: 1px solid var(--accent-strong);
+  border-radius: 7px;
+  color: white;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  min-height: 36px;
+  padding: 7px 10px;
+}
+
+button:hover {
+  background: var(--accent-strong);
+}
+
+button.secondary {
+  background: var(--surface);
+  border-color: var(--line);
+  color: CanvasText;
+}
+
+button.secondary:hover {
+  background: color-mix(in srgb, Canvas 82%, var(--accent) 18%);
+}
+
+button.danger {
+  background: color-mix(in srgb, var(--danger) 12%, Canvas);
+  border-color: color-mix(in srgb, var(--danger) 40%, transparent);
+  color: CanvasText;
+}
+
+button.danger:hover {
+  background: color-mix(in srgb, var(--danger) 20%, Canvas);
+}
+
+button:disabled,
+input:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.status {
+  color: var(--accent-strong);
+  min-height: 20px;
+}

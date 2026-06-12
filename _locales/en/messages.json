@@ -1,0 +1,146 @@
+{
+  "extensionName": {
+    "message": "Video Theater"
+  },
+  "extensionDescription": {
+    "message": "Adjust video brightness, contrast, saturation, and warmth, then save up to three quick settings per domain."
+  },
+  "optionsTitle": {
+    "message": "Video Theater Options"
+  },
+  "optionsDescription": {
+    "message": "Tune video picture filters and save up to three quick settings per domain."
+  },
+  "loadingPage": {
+    "message": "Loading page..."
+  },
+  "presetDefault": {
+    "message": "Default"
+  },
+  "presetDomain": {
+    "message": "Domain"
+  },
+  "quickPresetsSection": {
+    "message": "Quick settings"
+  },
+  "quickPresetLabel": {
+    "message": "Quick {slot}"
+  },
+  "emptyPresetSlot": {
+    "message": "Empty"
+  },
+  "brightnessLabel": {
+    "message": "Brightness"
+  },
+  "contrastLabel": {
+    "message": "Contrast"
+  },
+  "saturationLabel": {
+    "message": "Saturation"
+  },
+  "warmthLabel": {
+    "message": "Warmth"
+  },
+  "savePresetButton": {
+    "message": "Save"
+  },
+  "clearPresetButton": {
+    "message": "Clear"
+  },
+  "resetFiltersButton": {
+    "message": "Preview default"
+  },
+  "resetFiltersHint": {
+    "message": "Sets the sliders to neutral for this tab only. Saved presets are unchanged until you save."
+  },
+  "manageButton": {
+    "message": "Manage presets"
+  },
+  "resetAllButton": {
+    "message": "Delete all presets"
+  },
+  "videoCount": {
+    "message": "{count} video element(s) found."
+  },
+  "unsupportedPage": {
+    "message": "This page cannot be adjusted."
+  },
+  "unknownError": {
+    "message": "Unknown error"
+  },
+  "savingPreset": {
+    "message": "Saving quick setting..."
+  },
+  "saveError": {
+    "message": "Unable to save preset."
+  },
+  "savedPreset": {
+    "message": "Saved quick setting {slot}."
+  },
+  "appliedPreset": {
+    "message": "Applied quick setting {slot}."
+  },
+  "resetError": {
+    "message": "Unable to reset."
+  },
+  "clearPresetDone": {
+    "message": "Quick setting {slot} was cleared."
+  },
+  "resetFiltersDone": {
+    "message": "This tab is previewing neutral settings."
+  },
+  "resetAllConfirm": {
+    "message": "Delete every saved Video Theater quick setting? This cannot be undone."
+  },
+  "resetAllDone": {
+    "message": "All saved presets were deleted."
+  },
+  "behaviorSection": {
+    "message": "Behavior"
+  },
+  "autoApplyLabel": {
+    "message": "Automatically apply saved presets when a page opens"
+  },
+  "scopeHint": {
+    "message": "Each domain can keep up to three quick settings. The last saved or selected setting is applied automatically."
+  },
+  "presetsSection": {
+    "message": "Saved presets"
+  },
+  "dangerZoneSection": {
+    "message": "Danger zone"
+  },
+  "resetAllDescription": {
+    "message": "Delete every saved quick setting. This affects all domains and cannot be undone."
+  },
+  "presetTargetHeader": {
+    "message": "Target"
+  },
+  "presetFiltersHeader": {
+    "message": "Filters"
+  },
+  "presetUpdatedHeader": {
+    "message": "Updated"
+  },
+  "presetActionsHeader": {
+    "message": "Actions"
+  },
+  "optionsSaved": {
+    "message": "Saved."
+  },
+  "noPresets": {
+    "message": "No saved presets yet."
+  },
+  "deletePresetButton": {
+    "message": "Delete"
+  },
+  "presetDeleted": {
+    "message": "Preset deleted."
+  },
+  "filtersSummary": {
+    "message": "Brightness {brightness}%, contrast {contrast}%, saturation {saturation}%, warmth {warmth}%"
+  },
+  "compactFiltersSummary": {
+    "message": "B {brightness} / C {contrast} / S {saturation} / W {warmth}"
+  }
+}
