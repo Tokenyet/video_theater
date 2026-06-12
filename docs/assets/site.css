@@ -148,6 +148,47 @@ article {
   gap: 8px;
 }
 
+footer {
+  border-top: 1px solid var(--line);
+  margin-top: 28px;
+  padding-top: 18px;
+}
+
+a {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.policy {
+  max-width: 860px;
+}
+
+.policy header,
+.policy section {
+  display: grid;
+  gap: 12px;
+}
+
+.policy header {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 24px;
+}
+
+.policy header > p:first-child {
+  color: var(--accent);
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.policy h1 {
+  font-size: clamp(38px, 6vw, 64px);
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+}
+
 @media (max-width: 760px) {
   .hero {
     grid-template-columns: 1fr;

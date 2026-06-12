@@ -6,15 +6,16 @@ Video Theater adjusts CSS filters on video elements in the current browser page.
 
 The extension stores user-created presets in `chrome.storage.sync`:
 
-- Domain label and quick-setting slot selected by the user
+- Saved page URL, hostname/domain label, and quick-setting slot selected by the user
 - Brightness, contrast, saturation, and warmth values
-- Last updated timestamp
+- Last selected and last updated timestamps
+- The auto-apply preference
 
-This data is used only to reapply the user's chosen video settings on matching pages.
+This data is used only to reapply the user's chosen video settings on matching pages and to show saved presets in the options page. Matching is based on the hostname and quick-setting slot.
 
 ## Page Access
 
-Video Theater runs a content script on web pages so it can apply CSS filters to video elements. The script does not inspect video contents, capture media, or modify form data.
+Video Theater runs a content script on web pages so it can apply CSS filters to video elements. The script reads the page hostname and URL when the user saves a preset, counts video elements for the popup status, and applies a CSS filter to `video` elements. It does not inspect page text, inspect video contents, capture media, or modify form data.
 
 ## Resetting Data
 

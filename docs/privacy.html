@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Video Theater Privacy Policy</title>
+    <link rel="stylesheet" href="assets/site.css">
+  </head>
+  <body>
+    <main class="policy">
+      <header>
+        <p>Video Theater</p>
+        <h1>Privacy Policy</h1>
+        <p>Video Theater adjusts CSS filters on video elements in the current browser page. The extension does not collect analytics, transmit data to external services, sell user data, or share user data.</p>
+      </header>
+
+      <section>
+        <h2>Stored Data</h2>
+        <p>The extension stores user-created presets and the auto-apply option in <code>chrome.storage.sync</code>. Presets include the saved page URL, hostname or domain label, quick-setting slot, brightness, contrast, saturation, warmth, selected timestamp, and updated timestamp.</p>
+        <p>This data is used only to reapply the user's chosen video settings on matching pages and to show saved presets in the options page. Matching is based on the hostname and quick-setting slot.</p>
+      </section>
+
+      <section>
+        <h2>Page Access</h2>
+        <p>Video Theater runs a content script on web pages so it can apply CSS filters to video elements. The script reads the page hostname and URL when the user saves a preset, counts video elements for the popup status, and applies a CSS filter to <code>video</code> elements.</p>
+        <p>The extension does not inspect page text, inspect video contents, capture media, or modify form data.</p>
+      </section>
+
+      <section>
+        <h2>Resetting Data</h2>
+        <p>Users can remove individual quick settings from the popup, delete individual presets from the options page, or delete every saved preset from the options-page danger zone.</p>
+      </section>
+
+      <section>
+        <h2>Network</h2>
+        <p>The extension does not contact any remote server.</p>
+      </section>
+
+      <footer>
+        <a href="index.html">Back to Video Theater</a>
+      </footer>
+    </main>
+  </body>
+</html>

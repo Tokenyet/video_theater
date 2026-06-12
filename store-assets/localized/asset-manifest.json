@@ -1,0 +1,40 @@
+{
+  "generatedAt": "2026-06-12T15:43:14.472Z",
+  "outputs": [
+    {
+      "locale": "en",
+      "screenshot": "D:\\Project\\video_theater\\store-assets\\localized\\screenshot-en-1280x800.png",
+      "promoSmall": "D:\\Project\\video_theater\\store-assets\\localized\\promo-small-en-440x280.png",
+      "title": "Video Theater",
+      "summary": "Adjust video brightness, contrast, saturation, and warmth, then save up to three quick settings per domain."
+    },
+    {
+      "locale": "ja",
+      "screenshot": "D:\\Project\\video_theater\\store-assets\\localized\\screenshot-ja-1280x800.png",
+      "promoSmall": "D:\\Project\\video_theater\\store-assets\\localized\\promo-small-ja-440x280.png",
+      "title": "Video Theater",
+      "summary": "動画の明るさ、コントラスト、彩度、暖かさを調整し、ドメインごとに最大 3 つのクイック設定を保存します。"
+    },
+    {
+      "locale": "ko",
+      "screenshot": "D:\\Project\\video_theater\\store-assets\\localized\\screenshot-ko-1280x800.png",
+      "promoSmall": "D:\\Project\\video_theater\\store-assets\\localized\\promo-small-ko-440x280.png",
+      "title": "Video Theater",
+      "summary": "동영상 밝기, 대비, 채도, 따뜻함을 조정하고 도메인별로 최대 3개의 빠른 설정을 저장합니다."
+    },
+    {
+      "locale": "zh_CN",
+      "screenshot": "D:\\Project\\video_theater\\store-assets\\localized\\screenshot-zh_CN-1280x800.png",
+      "promoSmall": "D:\\Project\\video_theater\\store-assets\\localized\\promo-small-zh_CN-440x280.png",
+      "title": "Video Theater",
+      "summary": "调整视频亮度、对比度、饱和度和暖色，并为每个域名保存最多三组快速设置。"
+    },
+    {
+      "locale": "zh_TW",
+      "screenshot": "D:\\Project\\video_theater\\store-assets\\localized\\screenshot-zh_TW-1280x800.png",
+      "promoSmall": "D:\\Project\\video_theater\\store-assets\\localized\\promo-small-zh_TW-440x280.png",
+      "title": "Video Theater",
+      "summary": "調整影片亮度、對比、飽和度與暖色，並為每個網域儲存最多三組快速設定。"
+    }
+  ]
+}

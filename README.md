@@ -25,7 +25,7 @@ Video Theater is a Chrome/Vivaldi-compatible MV3 extension for adjusting video p
 
 ## Privacy
 
-Video Theater stores only user-created filter presets in `chrome.storage.sync`. Presets include the domain label, slot number, filter values, and update time. It does not collect analytics, contact remote servers, or read video contents.
+Video Theater stores only user-created filter presets and the auto-apply option in `chrome.storage.sync`. Presets include the saved page URL, hostname/domain label, quick-setting slot number, filter values, selection time, and update time. The extension uses the hostname and slot to restore presets for matching pages. It does not collect analytics, contact remote servers, capture media, or read video contents.
 
 ## Development
 
@@ -46,3 +46,11 @@ Generate icons and a store-ready ZIP:
 .\scripts\generate-icons.ps1
 .\scripts\package.ps1
 ```
+
+Chrome Web Store release drafts are in `docs/STORE_LISTING.md`, `docs/CHROME_WEB_STORE_SUBMISSION.md`, and `docs/PRIVACY.md`.
+
+Published pages:
+
+- Homepage: https://tokenyet.github.io/video_theater/
+- Support: https://tokenyet.github.io/video_theater/support.html
+- Privacy policy: https://tokenyet.github.io/video_theater/privacy.html
