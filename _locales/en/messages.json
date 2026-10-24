@@ -142,5 +142,35 @@
   },
   "compactFiltersSummary": {
     "message": "B {brightness} / C {contrast} / S {saturation} / W {warmth}"
+  },
+  "reportIssueLink": {
+    "message": "Report a problem"
+  },
+  "githubLink": {
+    "message": "GitHub"
+  },
+  "retryButton": {
+    "message": "Try again"
+  },
+  "pageNotResponding": {
+    "message": "The page is not responding. Wait for it to finish loading, then try again."
+  },
+  "fileAccessRequired": {
+    "message": "To adjust local files, turn on \"Allow access to file URLs\" for Video Theater on the Extensions page."
+  },
+  "unsupportedPageHint": {
+    "message": "Browser pages, the Chrome Web Store, and other extensions cannot be changed."
+  },
+  "applyError": {
+    "message": "Unable to apply quick setting."
+  },
+  "clearError": {
+    "message": "Unable to clear quick setting."
+  },
+  "optionsSaveError": {
+    "message": "Unable to save changes. Please try again."
+  },
+  "optionsLoadError": {
+    "message": "Unable to load saved presets."
   }
 }

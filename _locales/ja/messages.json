@@ -142,5 +142,35 @@
   },
   "compactFiltersSummary": {
     "message": "明 {brightness} / コ {contrast} / 彩 {saturation} / 暖 {warmth}"
+  },
+  "reportIssueLink": {
+    "message": "問題を報告"
+  },
+  "githubLink": {
+    "message": "GitHub"
+  },
+  "retryButton": {
+    "message": "再試行"
+  },
+  "pageNotResponding": {
+    "message": "ページが応答していません。読み込みが終わるまで待ってから、もう一度お試しください。"
+  },
+  "fileAccessRequired": {
+    "message": "ローカルファイルを調整するには、拡張機能ページで Video Theater の「ファイルの URL へのアクセスを許可する」をオンにしてください。"
+  },
+  "unsupportedPageHint": {
+    "message": "ブラウザの内部ページ、Chrome ウェブストア、他の拡張機能のページは変更できません。"
+  },
+  "applyError": {
+    "message": "クイック設定を適用できません。"
+  },
+  "clearError": {
+    "message": "クイック設定を削除できません。"
+  },
+  "optionsSaveError": {
+    "message": "変更を保存できません。もう一度お試しください。"
+  },
+  "optionsLoadError": {
+    "message": "保存済みプリセットを読み込めません。"
   }
 }

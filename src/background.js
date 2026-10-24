@@ -1,20 +1,9 @@
-const STORAGE_KEY = "videoTheaterState";
+importScripts("state.js");
 
-const DEFAULT_STATE = {
-  version: 2,
-  autoApply: true,
-  defaultFilters: {
-    brightness: 100,
-    contrast: 100,
-    saturation: 100,
-    warmth: 0
-  },
-  presets: {}
-};
-
-chrome.runtime.onInstalled.addListener(async () => {
-  const result = await chrome.storage.sync.get(STORAGE_KEY);
-  if (!result[STORAGE_KEY]) {
-    await chrome.storage.sync.set({ [STORAGE_KEY]: DEFAULT_STATE });
+// Older versions kept every preset in one sync item, which overflows the 8 KB per-item quota.
+// Split it up once after an update; a fresh install writes nothing so synced settings win.
+chrome.runtime.onInstalled.addListener(({ reason }) => {
+  if (reason === "update") {
+    globalThis.VideoTheaterStore.migrateLegacyState().catch(() => {});
   }
 });

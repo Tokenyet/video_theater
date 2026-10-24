@@ -1,11 +1,12 @@
 {
   "manifest_version": 3,
   "name": "__MSG_extensionName__",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "__MSG_extensionDescription__",
   "default_locale": "en",
   "permissions": [
     "activeTab",
+    "scripting",
     "storage"
   ],
   "content_scripts": [
@@ -14,6 +15,7 @@
         "<all_urls>"
       ],
       "js": [
+        "src/state.js",
         "src/content.js"
       ],
       "run_at": "document_start",

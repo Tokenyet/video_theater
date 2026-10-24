@@ -1,5 +1,8 @@
 const MESSAGE_TYPE = "video-theater";
 const MAX_DOMAIN_PRESETS = 3;
+const NEW_ISSUE_URL = "https://github.com/Tokenyet/video_theater/issues/new";
+const CONNECT_TIMEOUT_MS = 3000;
+const FALLBACK_CONTENT_SCRIPTS = ["src/state.js", "src/content.js"];
 const DEFAULT_FILTERS = {
   brightness: 100,
   contrast: 100,
@@ -8,8 +11,18 @@ const DEFAULT_FILTERS = {
 };
 
 const controls = {};
+const frameVideoCounts = new Map();
 let applyTimer = 0;
 let lastState = null;
+let activeTabId = null;
+
+class PopupError extends Error {
+  constructor(messageKey, fallback, { retryable = false } = {}) {
+    super(fallback);
+    this.messageKey = messageKey;
+    this.retryable = retryable;
+  }
+}
 
 document.addEventListener("DOMContentLoaded", init);
 
@@ -26,25 +39,151 @@ async function init() {
   document.getElementById("preset-slots").addEventListener("click", handleSlotClick);
   document.getElementById("reset-filters").addEventListener("click", resetFilters);
   document.getElementById("open-options").addEventListener("click", () => chrome.runtime.openOptionsPage());
+  document.getElementById("retry").addEventListener("click", refreshState);
+  chrome.runtime.onMessage.addListener(handleFrameVideos);
 
   await refreshState();
 }
 
 async function refreshState() {
   setDisabled(true);
+  document.getElementById("retry").hidden = true;
+  setStatus("", "");
+  frameVideoCounts.clear();
   try {
-    const response = await sendToCurrentTab({ action: "getState" });
-    if (!response.ok) {
-      throw new Error(response.error || getMessage("unknownError", "Unknown error"));
+    const response = await connectToActiveTab();
+    if (!response?.ok) {
+      throw new PopupError("unknownError", response?.error || "Unknown error", { retryable: true });
     }
     lastState = response.state;
     setDisabled(false);
     setFormValues(lastState.filters);
     renderState(lastState);
+    requestFrameVideos();
   } catch (error) {
-    setStatus("unsupportedPage", "This page cannot be adjusted.");
-    document.getElementById("page-scope").textContent = getMessage("unsupportedPage", "This page cannot be adjusted.");
+    showConnectionError(error);
   }
+}
+
+// The top frame only counts its own videos; embedded players (e.g. a YouTube iframe) answer
+// this broadcast with a "frameVideos" message of their own.
+function requestFrameVideos() {
+  sendToCurrentTab({ action: "reportVideos" }).catch(() => {});
+}
+
+function handleFrameVideos(message, sender) {
+  if (message?.type !== MESSAGE_TYPE || message.action !== "frameVideos") {
+    return;
+  }
+  if (!sender.tab || sender.tab.id !== activeTabId || !sender.frameId) {
+    return;
+  }
+
+  frameVideoCounts.set(sender.frameId, Math.max(0, Number(message.videosCount) || 0));
+  if (lastState) {
+    renderVideoCount(lastState);
+  }
+}
+
+async function connectToActiveTab() {
+  const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+  if (!tab?.id) {
+    throw new PopupError("unsupportedPage", "This page cannot be adjusted.");
+  }
+  activeTabId = tab.id;
+
+  try {
+    return await requestTopFrameState(tab.id);
+  } catch (error) {
+    if (error instanceof PopupError) {
+      throw error;
+    }
+  }
+
+  // Chrome does not add content scripts to tabs that were already open when the extension was
+  // installed, updated, or reloaded, or while site access is limited to "on click". Opening the
+  // popup grants activeTab, so inject into this tab now and ask again.
+  await injectContentScript(tab);
+  return requestTopFrameState(tab.id);
+}
+
+function requestTopFrameState(tabId) {
+  let timer = 0;
+  const timeout = new Promise((_resolve, reject) => {
+    timer = setTimeout(() => reject(new PopupError(
+      "pageNotResponding",
+      "The page is not responding. Wait for it to finish loading, then try again.",
+      { retryable: true }
+    )), CONNECT_TIMEOUT_MS);
+  });
+  const request = chrome.tabs.sendMessage(tabId, { type: MESSAGE_TYPE, action: "getState" }, { frameId: 0 });
+  return Promise.race([request, timeout]).finally(() => clearTimeout(timer));
+}
+
+async function injectContentScript(tab) {
+  const files = chrome.runtime.getManifest().content_scripts?.[0]?.js || FALLBACK_CONTENT_SCRIPTS;
+  try {
+    await chrome.scripting.executeScript({ target: { tabId: tab.id, allFrames: true }, files });
+    return;
+  } catch {
+    // Some frames can refuse injection; the top frame is the one the popup talks to.
+  }
+
+  try {
+    await chrome.scripting.executeScript({ target: { tabId: tab.id }, files });
+  } catch {
+    if (await needsFileAccess(tab)) {
+      throw new PopupError(
+        "fileAccessRequired",
+        "To adjust local files, turn on \"Allow access to file URLs\" for Video Theater on the Extensions page."
+      );
+    }
+    if (isScriptableUrl(tab.url)) {
+      // A regular web page that refused injection is usually mid-navigation; let the user retry.
+      throw new PopupError(
+        "pageNotResponding",
+        "The page is not responding. Wait for it to finish loading, then try again.",
+        { retryable: true }
+      );
+    }
+    throw new PopupError("unsupportedPage", "This page cannot be adjusted.");
+  }
+}
+
+function isScriptableUrl(url = "") {
+  try {
+    const { protocol, hostname, pathname } = new URL(url);
+    const isWebStore = hostname === "chromewebstore.google.com" ||
+      (hostname === "chrome.google.com" && pathname.startsWith("/webstore"));
+    return ["http:", "https:", "file:"].includes(protocol) && !isWebStore;
+  } catch {
+    return false;
+  }
+}
+
+async function needsFileAccess(tab) {
+  if (!String(tab.url || "").startsWith("file:")) {
+    return false;
+  }
+  try {
+    return !(await chrome.extension.isAllowedFileSchemeAccess());
+  } catch {
+    return false;
+  }
+}
+
+function showConnectionError(error) {
+  const known = error instanceof PopupError;
+
+  document.getElementById("page-scope").textContent = getMessage("unsupportedPage", "This page cannot be adjusted.");
+  document.getElementById("preset-slots").textContent = "";
+  document.getElementById("video-count").textContent = "";
+  if (!known || error.messageKey === "unsupportedPage") {
+    setStatus("unsupportedPageHint", "Browser pages, the Chrome Web Store, and other extensions cannot be changed.");
+  } else {
+    setStatus(error.messageKey, error.message);
+  }
+  document.getElementById("retry").hidden = !(known && error.retryable);
 }
 
 function setFormValues(filters) {
@@ -68,7 +207,7 @@ function scheduleApply() {
 async function applyCurrentFilters() {
   try {
     const response = await sendToCurrentTab({ action: "setFilters", filters: readFilters() });
-    if (response.ok) {
+    if (response?.ok) {
       lastState = response.state;
       renderState(response.state);
     }
@@ -84,21 +223,34 @@ async function handleSlotClick(event) {
   }
 
   const slot = Number(button.dataset.slot);
-  if (button.dataset.action === "apply") {
-    await applyPreset(slot);
-  }
-  if (button.dataset.action === "save") {
-    await savePreset(slot);
-  }
-  if (button.dataset.action === "clear") {
-    await clearPreset(slot);
+  const action = button.dataset.action;
+  try {
+    if (action === "apply") {
+      await applyPreset(slot);
+    }
+    if (action === "save") {
+      await savePreset(slot);
+    }
+    if (action === "clear") {
+      await clearPreset(slot);
+    }
+  } catch {
+    if (action === "apply") {
+      setStatus("applyError", "Unable to apply quick setting.");
+    }
+    if (action === "save") {
+      setStatus("saveError", "Unable to save preset.");
+    }
+    if (action === "clear") {
+      setStatus("clearError", "Unable to clear quick setting.");
+    }
   }
 }
 
 async function applyPreset(slot) {
   const response = await sendToCurrentTab({ action: "applyPreset", slot });
-  if (!response.ok) {
-    setStatus("resetError", "Unable to reset.");
+  if (!response?.ok) {
+    setStatus("applyError", "Unable to apply quick setting.");
     return;
   }
 
@@ -113,7 +265,7 @@ async function savePreset(slot) {
   setStatus("savingPreset", "Saving quick setting...");
   const filters = readFilters();
   const response = await sendToCurrentTab({ action: "savePreset", slot, filters });
-  if (!response.ok) {
+  if (!response?.ok) {
     setStatus("saveError", "Unable to save preset.");
     return;
   }
@@ -126,8 +278,8 @@ async function savePreset(slot) {
 
 async function clearPreset(slot) {
   const response = await sendToCurrentTab({ action: "clearPreset", slot });
-  if (!response.ok) {
-    setStatus("resetError", "Unable to reset.");
+  if (!response?.ok) {
+    setStatus("clearError", "Unable to clear quick setting.");
     return;
   }
 
@@ -146,14 +298,40 @@ async function resetFilters() {
 
 function renderState(state) {
   document.getElementById("page-scope").textContent = state.domainLabel || "";
+  document.getElementById("report-issue").href = buildIssueUrl(state.domainLabel);
   document.getElementById("active-preset").textContent = state.activePreset ?
     formatSlotLabel(state.activePreset.slot) :
     getMessage("presetDefault", "Default");
   renderPresetSlots(state);
+  renderVideoCount(state);
+}
+
+function renderVideoCount(state) {
+  let count = Number(state.videosCount) || 0;
+  for (const frameCount of frameVideoCounts.values()) {
+    count += frameCount;
+  }
   document.getElementById("video-count").textContent = getMessage(
     "videoCount",
     "{count} video element(s) found."
-  ).replace("{count}", String(state.videosCount ?? 0));
+  ).replace("{count}", String(count));
+}
+
+function buildIssueUrl(hostname = "") {
+  const manifestVersion = chrome.runtime.getManifest().version;
+  const issueUrl = new URL(NEW_ISSUE_URL);
+  const context = [
+    `- Extension version: ${manifestVersion}`,
+    `- Browser: ${navigator.userAgent}`,
+    `- Website hostname: ${hostname || "Not available"}`
+  ].join("\n");
+
+  issueUrl.searchParams.set("title", "[Bug] ");
+  issueUrl.searchParams.set(
+    "body",
+    `## What happened?\n\n\n## What did you expect?\n\n\n## Steps to reproduce\n1. \n\n## Context\n${context}`
+  );
+  return issueUrl.href;
 }
 
 function renderPresetSlots(state) {
@@ -217,13 +395,13 @@ async function syncFiltersToFrames(filters) {
   }
 }
 
+// Broadcast to every frame: the top frame replies, embedded players apply the filters too.
 async function sendToCurrentTab(payload) {
-  const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-  if (!tab?.id) {
+  if (!activeTabId) {
     throw new Error("No active tab");
   }
 
-  return chrome.tabs.sendMessage(tab.id, { type: MESSAGE_TYPE, ...payload });
+  return chrome.tabs.sendMessage(activeTabId, { type: MESSAGE_TYPE, ...payload });
 }
 
 function setDisabled(disabled) {
@@ -231,10 +409,11 @@ function setDisabled(disabled) {
     element.disabled = disabled;
   }
   document.getElementById("open-options").disabled = false;
+  document.getElementById("retry").disabled = false;
 }
 
 function setStatus(key, fallback, values = {}) {
-  let message = getMessage(key, fallback);
+  let message = key ? getMessage(key, fallback) : fallback;
   for (const [name, value] of Object.entries(values)) {
     message = message.replace(`{${name}}`, String(value));
   }

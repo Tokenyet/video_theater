@@ -142,5 +142,35 @@
   },
   "compactFiltersSummary": {
     "message": "밝 {brightness} / 대 {contrast} / 채 {saturation} / 따 {warmth}"
+  },
+  "reportIssueLink": {
+    "message": "문제 신고"
+  },
+  "githubLink": {
+    "message": "GitHub"
+  },
+  "retryButton": {
+    "message": "다시 시도"
+  },
+  "pageNotResponding": {
+    "message": "페이지가 응답하지 않습니다. 로드가 끝날 때까지 기다린 후 다시 시도하세요."
+  },
+  "fileAccessRequired": {
+    "message": "로컬 파일을 조정하려면 확장 프로그램 페이지에서 Video Theater의 '파일 URL에 대한 액세스 허용'을 켜세요."
+  },
+  "unsupportedPageHint": {
+    "message": "브라우저 내부 페이지, Chrome 웹 스토어, 다른 확장 프로그램 페이지는 변경할 수 없습니다."
+  },
+  "applyError": {
+    "message": "빠른 설정을 적용할 수 없습니다."
+  },
+  "clearError": {
+    "message": "빠른 설정을 삭제할 수 없습니다."
+  },
+  "optionsSaveError": {
+    "message": "변경사항을 저장할 수 없습니다. 다시 시도하세요."
+  },
+  "optionsLoadError": {
+    "message": "저장된 프리셋을 불러올 수 없습니다."
   }
 }

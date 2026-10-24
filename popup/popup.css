@@ -224,3 +224,18 @@ input:disabled {
   color: var(--accent-strong);
   min-height: 20px;
 }
+
+.resource-links {
+  border-top: 1px solid var(--line);
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  padding-top: 12px;
+}
+
+.resource-links a {
+  color: var(--accent-strong);
+  font-size: 12px;
+  font-weight: 700;
+  text-underline-offset: 2px;
+}

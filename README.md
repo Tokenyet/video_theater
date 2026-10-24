@@ -10,6 +10,7 @@ Video Theater is a Chrome/Vivaldi-compatible MV3 extension for adjusting video p
 - Automatically apply the last saved or selected preset when matching pages open.
 - Temporarily preview neutral sliders without changing saved presets.
 - Manage saved presets from the options page.
+- Report a problem from the popup with the extension version, browser details, and current website hostname prefilled in a new GitHub issue.
 - Localized extension UI for English, Traditional Chinese, Simplified Chinese, Japanese, and Korean.
 
 ## Usage
@@ -25,7 +26,7 @@ Video Theater is a Chrome/Vivaldi-compatible MV3 extension for adjusting video p
 
 ## Privacy
 
-Video Theater stores only user-created filter presets and the auto-apply option in `chrome.storage.sync`. Presets include the saved page URL, hostname/domain label, quick-setting slot number, filter values, selection time, and update time. The extension uses the hostname and slot to restore presets for matching pages. It does not collect analytics, contact remote servers, capture media, or read video contents.
+Video Theater stores only user-created filter presets and the auto-apply option in `chrome.storage.sync`. Presets include the website hostname, quick-setting slot number, filter values, selection time, and update time; full page URLs are not stored. The extension uses the hostname and slot to restore presets for matching pages. It does not collect analytics, contact remote servers, capture media, or read video contents. The popup's "Report a problem" link opens a GitHub issue page with the extension version, browser user agent, and current website hostname prefilled, only when the user clicks it. See the [privacy policy](docs/PRIVACY.md).
 
 ## Development
 

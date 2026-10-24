@@ -142,5 +142,35 @@
   },
   "compactFiltersSummary": {
     "message": "亮 {brightness} / 對 {contrast} / 飽 {saturation} / 暖 {warmth}"
+  },
+  "reportIssueLink": {
+    "message": "回報問題"
+  },
+  "githubLink": {
+    "message": "GitHub"
+  },
+  "retryButton": {
+    "message": "重試"
+  },
+  "pageNotResponding": {
+    "message": "頁面沒有回應。請等頁面載入完成後再試一次。"
+  },
+  "fileAccessRequired": {
+    "message": "若要調整本機檔案，請在「擴充功能」頁面為 Video Theater 開啟「允許存取檔案網址」。"
+  },
+  "unsupportedPageHint": {
+    "message": "瀏覽器內建頁面、Chrome 線上應用程式商店與其他擴充功能的頁面無法調整。"
+  },
+  "applyError": {
+    "message": "無法套用快速設定。"
+  },
+  "clearError": {
+    "message": "無法清除快速設定。"
+  },
+  "optionsSaveError": {
+    "message": "無法儲存變更，請再試一次。"
+  },
+  "optionsLoadError": {
+    "message": "無法讀取已儲存的設定。"
   }
 }

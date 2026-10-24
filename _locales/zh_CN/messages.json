@@ -142,5 +142,35 @@
   },
   "compactFiltersSummary": {
     "message": "亮 {brightness} / 对 {contrast} / 饱 {saturation} / 暖 {warmth}"
+  },
+  "reportIssueLink": {
+    "message": "报告问题"
+  },
+  "githubLink": {
+    "message": "GitHub"
+  },
+  "retryButton": {
+    "message": "重试"
+  },
+  "pageNotResponding": {
+    "message": "页面没有响应。请等待页面加载完成后再试一次。"
+  },
+  "fileAccessRequired": {
+    "message": "如需调整本地文件，请在“扩展程序”页面为 Video Theater 开启“允许访问文件网址”。"
+  },
+  "unsupportedPageHint": {
+    "message": "浏览器内置页面、Chrome 应用商店和其他扩展程序的页面无法调整。"
+  },
+  "applyError": {
+    "message": "无法应用快速设置。"
+  },
+  "clearError": {
+    "message": "无法清除快速设置。"
+  },
+  "optionsSaveError": {
+    "message": "无法保存更改，请重试。"
+  },
+  "optionsLoadError": {
+    "message": "无法读取已保存的设置。"
   }
 }

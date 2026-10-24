@@ -12,7 +12,7 @@ Official references checked:
 
 Video Theater applies CSS picture filters to web page `video` elements. The user opens the toolbar popup, adjusts brightness, contrast, saturation, and warmth, then optionally saves the current filter values as one of three quick settings for the current domain. When auto-apply is enabled, the extension restores the last saved or selected quick setting for that domain on matching pages.
 
-Stored data stays in `chrome.storage.sync` and includes saved page URLs, hostnames/domain labels, quick-setting slots, filter values, selected timestamps, updated timestamps, and the auto-apply option. The extension does not send data to developer servers or third-party services.
+Stored data stays in `chrome.storage.sync` and includes website hostnames, quick-setting slots, filter values, selected timestamps, updated timestamps, and the auto-apply option; full page URLs are not stored. The extension does not send data to developer servers or third-party services. The popup's "Report a problem" link opens a GitHub issue page with the extension version, browser user agent, and current website hostname prefilled, only when the user clicks it.
 
 ## Dashboard Fields
 
@@ -63,7 +63,7 @@ Use Preview default to temporarily return the current tab to neutral values with
 
 ### Privacy Summary
 
-Video Theater stores user-created presets and the auto-apply option in browser sync storage. Presets include saved page URLs, hostnames, quick-setting slots, filter values, and timestamps. The extension does not collect analytics, send data to external servers, inspect video contents, or capture media.
+Video Theater stores user-created presets and the auto-apply option in browser sync storage. Presets include website hostnames, quick-setting slots, filter values, and timestamps. The extension does not collect analytics, send data to external servers, inspect video contents, or capture media. Only when you click "Report a problem" does it open a GitHub new-issue page with the extension version, browser details, and current website hostname prefilled.
 
 ### Screenshot Captions
 
@@ -101,7 +101,7 @@ Video Theater 讓你快速調整網頁影片的畫面濾鏡。開啟工具列彈
 
 ### Privacy Summary
 
-Video Theater 只會在瀏覽器同步儲存中保存使用者建立的設定與自動套用選項。設定包含儲存時的頁面 URL、主機名稱、快速設定槽位、濾鏡值與時間戳。擴充功能不收集分析資料、不傳送資料到外部伺服器、不檢查影片內容，也不擷取媒體。
+Video Theater 只會在瀏覽器同步儲存中保存使用者建立的設定與自動套用選項。設定包含網站主機名稱、快速設定槽位、濾鏡值與時間戳。擴充功能不收集分析資料、不傳送資料到外部伺服器、不檢查影片內容，也不擷取媒體。只有在你點選「回報問題」時，才會開啟 GitHub 新問題頁面，並預先填入擴充功能版本、瀏覽器資訊與目前網站的主機名稱。
 
 ### Screenshot Captions
 
@@ -139,7 +139,7 @@ Video Theater 可帮助你快速调整网页视频的画面滤镜。打开工具
 
 ### Privacy Summary
 
-Video Theater 只会在浏览器同步存储中保存用户创建的设置和自动应用选项。设置包含保存时的页面 URL、主机名、快速设置槽位、滤镜值和时间戳。扩展程序不收集分析数据、不向外部服务器发送数据、不检查视频内容，也不捕获媒体。
+Video Theater 只会在浏览器同步存储中保存用户创建的设置和自动应用选项。设置包含网站主机名、快速设置槽位、滤镜值和时间戳。扩展程序不收集分析数据、不向外部服务器发送数据、不检查视频内容，也不捕获媒体。只有在你点击“报告问题”时，才会打开 GitHub 新问题页面，并预先填入扩展程序版本、浏览器信息和当前网站的主机名。
 
 ### Screenshot Captions
 
@@ -177,7 +177,7 @@ Video Theater は、Web 上の動画向けの簡単な画質調整ツールで�
 
 ### Privacy Summary
 
-Video Theater は、ユーザーが作成したプリセットと自動適用オプションをブラウザの同期ストレージに保存します。プリセットには、保存時のページ URL、ホスト名、クイック設定スロット、フィルター値、タイムスタンプが含まれます。この拡張機能は分析データを収集せず、外部サーバーへデータを送信せず、動画の内容を検査したりメディアをキャプチャしたりしません。
+Video Theater は、ユーザーが作成したプリセットと自動適用オプションをブラウザの同期ストレージに保存します。プリセットには、Web サイトのホスト名、クイック設定スロット、フィルター値、タイムスタンプが含まれます。この拡張機能は分析データを収集せず、外部サーバーへデータを送信せず、動画の内容を検査したりメディアをキャプチャしたりしません。「問題を報告」をクリックした場合にのみ GitHub の新規 Issue ページが開き、拡張機能のバージョン、ブラウザ情報、現在のサイトのホスト名が事前に入力されます。
 
 ### Screenshot Captions
 
@@ -215,7 +215,7 @@ Video Theater는 웹 동영상을 위한 간단한 화면 필터 도구입니다
 
 ### Privacy Summary
 
-Video Theater는 사용자가 만든 프리셋과 자동 적용 옵션을 브라우저 동기화 저장소에 저장합니다. 프리셋에는 저장 당시의 페이지 URL, 호스트 이름, 빠른 설정 슬롯, 필터 값, 타임스탬프가 포함됩니다. 이 확장 프로그램은 분석 데이터를 수집하지 않고, 외부 서버로 데이터를 보내지 않으며, 동영상 내용을 검사하거나 미디어를 캡처하지 않습니다.
+Video Theater는 사용자가 만든 프리셋과 자동 적용 옵션을 브라우저 동기화 저장소에 저장합니다. 프리셋에는 웹사이트 호스트 이름, 빠른 설정 슬롯, 필터 값, 타임스탬프가 포함됩니다. 이 확장 프로그램은 분석 데이터를 수집하지 않고, 외부 서버로 데이터를 보내지 않으며, 동영상 내용을 검사하거나 미디어를 캡처하지 않습니다. '문제 신고'를 클릭할 때만 GitHub 새 이슈 페이지가 열리며, 확장 프로그램 버전, 브라우저 정보, 현재 웹사이트 호스트 이름이 미리 입력됩니다.
 
 ### Screenshot Captions
 
