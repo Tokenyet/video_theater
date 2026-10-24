@@ -28,7 +28,7 @@ Required because videos can appear on many websites. The content script applies 
 
 ## Data Use
 
-The extension stores website hostnames, quick-setting slots, filter values, selected timestamps, updated timestamps, and the auto-apply option. Full page URLs are not stored (0.1.0 saved them; the 0.1.1 storage migration drops them). It does not transmit data externally on its own. The only user-initiated exception is the popup's "Report a problem" link, which opens a GitHub new-issue page with the extension version, browser user agent, and current website hostname prefilled in the page address.
+The extension stores website hostnames, quick-setting slots, filter values, selected timestamps, updated timestamps, and the auto-apply option. Full page URLs are not stored (0.1.1 and earlier saved them; the 0.1.2 storage migration drops them). It does not transmit data externally on its own. The only user-initiated exception is the popup's "Report a problem" link, which opens a GitHub new-issue page with the extension version, browser user agent, and current website hostname prefilled in the page address.
 
 ## Paste-Ready Dashboard Answers
 
